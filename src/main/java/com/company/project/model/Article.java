@@ -27,6 +27,11 @@ public class Article {
     private String url;
 
     /**
+     * 状态，1收藏，2稍后再看
+     */
+    private String status;
+
+    /**
      * 创建时间
      */
     @Column(name = "createTime")
@@ -108,6 +113,24 @@ public class Article {
      */
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    /**
+     * 获取状态，1收藏，2稍后再看
+     *
+     * @return status - 状态，1收藏，2稍后再看
+     */
+    public String getStatus() {
+        return status;
+    }
+
+    /**
+     * 设置状态，1收藏，2稍后再看
+     *
+     * @param status 状态，1收藏，2稍后再看
+     */
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     /**
