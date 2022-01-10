@@ -5,16 +5,13 @@ import com.company.project.model.Article;
 import com.company.project.service.ArticleService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 /**
-* Created by CodeGenerator on 2022/01/06.
+* Created by CodeGenerator on 2022/01/10.
 */
 @RestController
 @RequestMapping("/article")
@@ -23,7 +20,8 @@ public class ArticleController {
     private ArticleService articleService;
 
     @PostMapping("/add")
-    public Result add(Article article) {
+    public Result add(@RequestBody Article article) {
+        System.out.println(article.getCreatetime().toString());
         articleService.save(article);
         return ResultGenerator.genSuccessResult();
     }
